@@ -1,0 +1,13 @@
+{% extends "reports/base_generic.html" %}
+
+{% block content %}
+    <h1>Report Repository Home</h1>
+    <p>Welcome to the report repository.  Developed by <em>Mike</em>!</p>
+    <h2>Dynamic Content</h2>
+    <p>The library has the following record counts:</p>
+    <ul>
+        <li><strong>Reports:</strong>{{ num_reports }}</li>
+        <li><strong>Departments:</strong>{{ num_departments }}</li>
+    </ul>
+    <p>You have visited this pages {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+{% endblock %}

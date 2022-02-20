@@ -1,0 +1,23 @@
+{% extends 'reports/base_generic.html' %}
+
+{% block content %}
+
+<h1>{{ report.report_name }} [{{ report.report_id }}]</h1>
+
+<table>
+    <tr>
+        <th>Report ID</th>
+        <td>{{ report.report_id }}</td>
+    </tr>
+    <tr>
+        <th>Report Requestor</th>
+        <td>{{ report.report_requester }}</td>
+    </tr>
+    <tr>
+        <th>Report Writer</th>
+        <td>{{ report.report_writer }}</td>
+    </tr>
+</table>
+
+
+{% endblock content %}

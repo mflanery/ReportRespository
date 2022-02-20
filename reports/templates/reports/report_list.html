@@ -1,0 +1,31 @@
+{% extends 'reports/base_generic.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Report Name</th>
+        <th>Report Description</th>
+        <th>Report Writer</th>
+        <th>Report Requester</th>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+        <td><a href="{% url 'reports:ReportDetail' object.report_id %}">{{ object.report_name }}</a></td>
+        <td>{{ object.report_description }}</td>
+        <td>{{ object.report_writer }}</td>
+        <td>{{ object.report_requester }}</td>
+        <td><a href="{% url 'reports:update' object.report_id %}">Edit</a></td>
+    </tr>        
+    {% endfor %}
+</table>
+{% comment %} <ul>
+    {% for object in object_list %}
+    <li><a href="{% url 'reports:update' object.report_id %}">{{ object.report_name }}</a>: {{ object.report_description}}</li>
+
+    <hr/>
+
+    {% empty %}
+    <li>No objects yet</li>
+    {% endfor %}
+</ul> {% endcomment %}
+{% endblock content %}
